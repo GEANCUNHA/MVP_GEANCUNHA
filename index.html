@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predição de Empréstimo</title>
+
+    <!-- Vincular o CSS externo -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Predição de Aprovação de Empréstimo</h1>
+
+    <!-- Resultado da predição logo após o título -->
+    <div class="result">
+        <h2>{{ prediction_text }}</h2>
+    </div>
+
+    <form action="/predict" method="POST">
+        <label for="no_of_dependents">Número de Dependentes:</label>
+        <input type="text" id="no_of_dependents" name="no_of_dependents"><br>
+
+        <label for="income_annum">Renda Anual:</label>
+        <input type="text" id="income_annum" name="income_annum"><br>
+
+        <label for="loan_amount">Valor do Empréstimo:</label>
+        <input type="text" id="loan_amount" name="loan_amount"><br>
+
+        <label for="loan_term">Prazo do Empréstimo (meses):</label>
+        <input type="text" id="loan_term" name="loan_term"><br>
+
+        <label for="cibil_score">Pontuação CIBIL:</label>
+        <input type="text" id="cibil_score" name="cibil_score"><br>
+
+        <label for="residential_assets_value">Valor dos Ativos Residenciais:</label>
+        <input type="text" id="residential_assets_value" name="residential_assets_value"><br>
+
+        <label for="commercial_assets_value">Valor dos Ativos Comerciais:</label>
+        <input type="text" id="commercial_assets_value" name="commercial_assets_value"><br>
+
+        <label for="luxury_assets_value">Valor dos Ativos de Luxo:</label>
+        <input type="text" id="luxury_assets_value" name="luxury_assets_value"><br>
+
+        <label for="bank_asset_value">Valor dos Ativos Bancários:</label>
+        <input type="text" id="bank_asset_value" name="bank_asset_value"><br>
+
+        <label for="education__Not_Graduate">Educação (0 = Graduado, 1 = Não Graduado):</label>
+        <input type="text" id="education__Not_Graduate" name="education__Not_Graduate"><br>
+
+        <label for="self_employed__Yes">Autônomo (0 = Não, 1 = Sim):</label>
+        <input type="text" id="self_employed__Yes" name="self_employed__Yes"><br>
+
+        <input type="submit" value="Fazer Predição">
+    </form>
+</body>
+</html>
